@@ -43,11 +43,11 @@ Function New-SlackMessageHyperlink
 
 <#
     .SYNOPSIS
-    Creates an attachement object used in Post-SlackMessage
+    Creates an attachement object used in Send-SlackMessage
     
     .DESCRIPTION
     Attachments let you add more context to a message, making them more useful and effective.
-    This function generates them as a Powershell object so Post-SlackMessage can convert them
+    This function generates them as a Powershell object so Send-SlackMessage can convert them
 
     .PARAMETER title
     Mandatory
@@ -178,7 +178,7 @@ Function New-SlackMessageAttachment
     Use New-SlackMessageAttachment to generate them
 
     .EXAMPLE
-    Post-SlackMessage -Text "Hello world" -ApiKey "0000000000/0000000000/00000000000000000000000000" -channel "#disk-alerts"
+    Send-SlackMessage -Text "Hello world" -ApiKey "0000000000/0000000000/00000000000000000000000000" -channel "#disk-alerts"
     
     .OUTPUT
     True/False
@@ -186,7 +186,7 @@ Function New-SlackMessageAttachment
     .NOTES
     Written by Martin Howlett @WillCode4Pizza
 #>
-Function Post-SlackMessage
+Function Send-SlackMessage
 {
     Param(
         [Parameter(Mandatory=$true)][string]$Text,
